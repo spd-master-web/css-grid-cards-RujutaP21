@@ -114,7 +114,12 @@ body {
 }
 
 .card-symbol {
+  font-size: 2.5em;
+  line-height: 0.2em;
+}
 
+.card-symbol P{
+  margin: 0;
 }
 
 @media (max-width: 320px) {
