@@ -3,15 +3,16 @@
 }
 
 :root {
-  --main-color: #333333;
-  --border-color: #33333333;
-  --background-color: #eee;
+  --main-color: rgb(255, 255, 255);
+  --border-color: rgb(240, 240, 227);
+  --background-color: rgb(153, 153, 153);
 }
 
 html {
   /* root font size REM */
   /* 1.25 * 16px = 20px */
   font-size: 1.25em;
+  line-height: 1.3em;
 }
 
 @media (max-width: 320px) {
@@ -24,13 +25,10 @@ html {
 body {
   margin: 0;
 
-  font-family: 'Times New Roman', Times, serif;
+  font-family: Arial, Helvetica, sans-serif;
   color: var(--main-color);
 }
 
-h2, p {
-  margin: 0;
-}
 
 /* GRID */
 .grid-cards {
@@ -51,14 +49,17 @@ h2, p {
 
 /* CARD */
 .card {
+  overflow: hidden;
+  position: relative;
+  max-width: 400px;
+  height: 600px;
   padding: 2em;
-
   display: flex;
-
-
+  justify-content: space-between;
+  align-items: baseline;
   background-color: var(--background-color);
   border: .1rem solid var(--border-color);
-  border-radius: 2rem;
+  border-radius: 1rem;
 }
 @media (max-width: 320px) {
   .card {
@@ -68,9 +69,21 @@ h2, p {
   }
 }
 
+/* card image */
+.card-background{
+  display: block;
+  position: relative;
+  top: -2em;
+  left: -2em;
+  mix-blend-mode: multiply;
+}
+
 /* card content */
 .card-content {
-  margin-right: 1rem;
+  margin-right: 1.5rem;
+  margin-left: 1rem;
+  position: absolute;
+  padding-top: 60%;
 }
 
 .card-title {
@@ -80,16 +93,20 @@ h2, p {
 
 .card-subtitle {
   text-transform: uppercase;
+  letter-spacing: 0.02em;
+  font-size: 1.2em;
 }
 
 .card-description {
-
+  letter-spacing: 0.02em;
 }
 
 /* card graphic */
 .card-graphic {
+  position: absolute;
   flex-basis: 20%;
   flex-shrink: 0;
+  right: 2em;
 }
 
 .card-number {
@@ -97,7 +114,12 @@ h2, p {
 }
 
 .card-symbol {
+  font-size: 2.5em;
+  line-height: 0.2em;
+}
 
+.card-symbol P{
+  margin: 0;
 }
 
 @media (max-width: 320px) {
